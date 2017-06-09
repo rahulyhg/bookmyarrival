@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\LocationModel;
 
 class LocationsController extends Controller
 {
@@ -14,7 +15,7 @@ class LocationsController extends Controller
      */
     public function index()
     {
-        //
+        //        
     }
 
     /**
@@ -25,6 +26,7 @@ class LocationsController extends Controller
     public function create()
     {
         //
+        return view('admin/locations');
     }
 
     /**
@@ -33,9 +35,13 @@ class LocationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function stores(Request $request)
     {
         //
+        $locations = new LocationModel;
+        $locations->name = $request->name;
+        $locations->save();
+
     }
 
     /**

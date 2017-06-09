@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*Admin Routes*/
+Route::get('admin/location/create','Admin\LocationsController@create');
+Route::post('admin/location/InsData','Admin\LocationsController@stores');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
